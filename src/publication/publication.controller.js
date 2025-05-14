@@ -25,11 +25,8 @@ export const publicationSave = async(req, res) => {
 }
 
 export const getAll = async(req, res) => {
-    const { limit, skip} = req.query
     try {
         const publications = await Publication.find()
-        .skip(skip)
-        .limit(limit)
 
         if(publications.length === 0){
             return res.send(
