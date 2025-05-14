@@ -20,6 +20,10 @@ const publicaciónSchema = Schema(
         publicationDate:{
             type: Date,
             required: [true, `Publication Date is required`]
+        },
+        repository: {
+            type: String,
+            required: [true, `Repository is required`]
         }
     }
 )
