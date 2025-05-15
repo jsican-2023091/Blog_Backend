@@ -1,7 +1,7 @@
 //Modelo de publicación
 import { Schema, model } from "mongoose"
 
-const publicaciónSchema = Schema(
+const postSchema = Schema(
     {
         title:{
             type: String,
@@ -28,4 +28,4 @@ const publicaciónSchema = Schema(
     }
 )
 
-export default model('Publication', publicaciónSchema)
+export default model('Post', postSchema)

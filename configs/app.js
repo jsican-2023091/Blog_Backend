@@ -7,7 +7,7 @@ import morgan from "morgan"
 import helmet from "helmet"
 import cors from "cors"
 
-import PublicationRoutes from '../src/publication/publication.routes.js'
+import PublicationRoutes from '../src/post/post.routes.js'
 import CommentRoutes from '../src/comments/comments.routes.js'
 
 const configs = (app) => {

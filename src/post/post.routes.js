@@ -1,15 +1,15 @@
 import { Router } from "express"
-import { publicationSave, getAll, publicationUpdate, deletePubli } from "./publication.controller.js"
+import { postSave, getAll, publicationUpdate, deletePost } from "./post.controller.js"
 import { publiValidation } from "../../helpers/validators.js"
 
 const api = Router() 
 
 api.get('/getAll', getAll)
 
-api.post('/save',[ publiValidation], publicationSave)
+api.post('/save',[ publiValidation], postSave)
 
 api.put('/update/:id', publicationUpdate)
 
-api.delete('/deleted/:id', deletePubli)
+api.delete('/deleted/:id', deletePost)
 
 export default api

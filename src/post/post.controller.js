@@ -1,16 +1,16 @@
 //Controlador de publicación
-import Publication from './publication.model.js'
+import Post from './post.model.js'
 
-export const publicationSave = async(req, res) => {
+export const postSave = async(req, res) => {
     try {
         let data = req.body
-        let publication = new Publication(data)
-        await publication.save()
+        let post = new Post(data)
+        await post.save()
 
         return res.send(
             {
                 success: true,
-                message: `Publication saved ${publication.title}`
+                message: `Post saved ${post.title}`
             }
         )
     } catch (err) {
@@ -26,22 +26,22 @@ export const publicationSave = async(req, res) => {
 
 export const getAll = async(req, res) => {
     try {
-        const publications = await Publication.find()
+        const posts = await Post.find()
 
-        if(publications.length === 0){
+        if(posts.length === 0){
             return res.send(
                 {
                     success: false,
-                    message: 'Publications not found'
+                    message: 'Posts not found'
                 }
             )
         }
         return res.send(
             {
                 success: true,
-                message: 'Publications found',
-                total: publications.length,
-                publications
+                message: 'Post found',
+                total: posts.length,
+                posts
             }
         )
     } catch (err) {
@@ -60,21 +60,21 @@ export const publicationUpdate = async(req, res) => {
         const id = req.params.id
         const data = req.body
 
-        const updatePubli = await Publication.findByIdAndUpdate(
+        const updatePost = await Post.findByIdAndUpdate(
             id,
             data,
             {new: true}
         )
-        if(!updatePubli) return res.status(404).send(
+        if(!updatePost) return res.status(404).send(
             {
                 success: false,
-                message: 'Publication not found, not updated'
+                message: 'Post not found, not updated'
             }
         )
         return res.send(
             {
                 success: true,
-                message: 'Publication updated succesfully'
+                message: 'Post updated succesfully'
             }
         )
     } catch (err) {
@@ -91,20 +91,37 @@ export const publicationUpdate = async(req, res) => {
 
 
 // Eliminar una publicación
-export const deletePubli = async (req, res) => {
+export const deletePost = async (req, res) => {
     try {
         const { id } = req.params
 
-        const deletedPost = await Publication.findByIdAndDelete(id)
+        const deletedPost = await Post.findByIdAndDelete(id)
 
         if (!deletedPost) {
-            return res.status(404).json({ success: false, message: 'Post not found' })
+            return res.status(404).send( 
+                {
+                    success: false, 
+                    message: 'Post not found'
+                } 
+            )
         }
 
-        return res.status(200).json({ success: true, message: 'Post deleted successfully' })
+        return res.status(200).send(
+            { 
+                success: true, 
+                message: 'Post deleted successfully' 
+            }
+        )
+
     } catch (err) {
         console.error(err)
-        return res.status(500).json({ success: false, message: 'Error deleting post', error: err.message })
+        return res.status(500).send(
+            {
+                 success: false, 
+                 message: 'Error deleting post', 
+                 error: err.message 
+            }
+        )
     }
 }
 
