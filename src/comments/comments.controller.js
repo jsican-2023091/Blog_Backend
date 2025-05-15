@@ -128,7 +128,7 @@ export const deletedComment = async(req, res) => {
     }
 }
 
-export const  = async (req, res) => {
+export const getCommentsByPostId = async (req, res) => {
     try {
         const postId = req.params.id
         const comments = await Comment.find({ post: postId }).sort({ createdAt: -1 })
