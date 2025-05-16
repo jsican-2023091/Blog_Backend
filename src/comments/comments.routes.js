@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { commentSave, getAll, updateComment, deletedComment, getCommentsByPostId } from "./comments.controller.js"
+import { commentSave, getAll, updateComment, deletedComment, getCommentsByPostId, getCommentById } from "./comments.controller.js"
 
 const api = Router()
 
@@ -11,6 +11,8 @@ api.put('/update/:id', updateComment)
 
 api.delete('/deleted/:id', deletedComment)
 
-api.get('/getCommentsByPostId', getCommentsByPostId)
+api.get('/getCommentsById/:id', getCommentById)
+
+api.get('/getCommentByPostId/:id', getCommentsByPostId)
 
 export default api
