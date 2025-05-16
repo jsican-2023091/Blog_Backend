@@ -9,7 +9,8 @@ export const commentSave = async(req, res) => {
         return res.send(
             {
                 success: true,
-                message: `The comment was successfully saved`
+                message: `The comment was successfully saved`,
+                date: comment
             }
         )
     } catch (err) {
@@ -129,34 +130,56 @@ export const deletedComment = async(req, res) => {
 }
 
 export const getCommentsByPostId = async (req, res) => {
-    try {
-        const postId = req.params.id
-        const comments = await Comment.find({ post: postId }).sort({ createdAt: -1 })
-        if (comments.length === 0) {
-            return res.status(404).send(
-                {
-                    success: false,
-                    message: 'No comments found for this post'
-                }
-            )
-        }
+  try {
+    const postId = req.params.id
+    const comments = await Comment.find({ post: postId }).sort({ createdAt: -1 })
 
-        return res.send(
-            {
-                success: true,
-                message: 'Comments retrieved successfully',
-                total: comments.length,
-                comments
-            }
-        )
-    } catch (err) {
-        console.error(err);
-        return res.status(500).send(
-            {
-                success: false,
-                message: 'Error comments by post ID',
-                err
-            }
-        )
+    if (comments.length === 0) {
+      return res.status(404).send({
+        success: false,
+        message: 'No comments found for this post'
+      })
     }
+
+    return res.send({
+      success: true,
+      message: 'Comments retrieved successfully',
+      total: comments.length,
+      comments
+    })
+  } catch (err) {
+    console.error(err)
+    return res.status(500).send({
+      success: false,
+      message: 'Error comments by post ID',
+      err
+    })
+  }
 }
+
+export const getCommentById = async (req, res) => {
+  try {
+    const commentId = req.params.id
+    const comment = await Comment.findById(commentId)
+    if (!comment) {
+      return res.status(404).send({
+        success: false,
+        message: 'Comment not found'
+      })
+    }
+    return res.send({
+      success: true,
+      message: 'Comment retrieved successfully',
+      comment
+    })
+  } catch (err) {
+    console.error(err)
+    return res.status(500).send({
+      success: false,
+      message: 'Error retrieving comment by ID',
+      err
+    })
+  }
+}
+
+
