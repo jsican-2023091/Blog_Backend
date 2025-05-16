@@ -1,0 +1,1413 @@
+{
+	"info": {
+		"_postman_id": "a4c9d18f-6aac-4e25-9767-d14ef1300c63",
+		"name": "Blog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37951882"
+	},
+	"item": [
+		{
+			"name": "Publication",
+			"item": [
+				{
+					"name": "Save",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "B",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "B",
+									"type": "text"
+								},
+								{
+									"key": "course",
+									"value": "C",
+									"type": "text"
+								},
+								{
+									"key": "publicationDate",
+									"value": "12/08/2024",
+									"type": "text"
+								},
+								{
+									"key": "repository",
+									"value": "link",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3040/v1/post/save",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"post",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3040/v1/post/getAll",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"post",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdatePublication",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Ronaldo",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3040/v1/publication/update/6822b597d39afe11a5f84b00",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"publication",
+								"update",
+								"6822b597d39afe11a5f84b00"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeletePUblicacion",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "localhost:3040/v1/publication/deleted/6822bac920e09c0f6a4c765c",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"publication",
+								"deleted",
+								"6822bac920e09c0f6a4c765c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3040/v1/post/getPostById/682543f0f7bafe459f911476",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"post",
+								"getPostById",
+								"682543f0f7bafe459f911476"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ByCourse",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3040/v1/post/getCourse/Practica",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"post",
+								"getCourse",
+								"Practica"
+							],
+							"query": [
+								{
+									"key": "course",
+									"value": "Practica",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comment",
+			"item": [
+				{
+					"name": "SaveComment",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "content",
+									"value": "Tremendo",
+									"type": "text"
+								},
+								{
+									"key": "post",
+									"value": "682543f0f7bafe459f911476",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3040/v1/comment/save",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"comment",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3040/v1/comment/getAll",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"comment",
+								"getAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateComment",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "content",
+									"value": "Tremenda noticia bro",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3040/v1/comment/update/6822bceadfcd47d1902d1930",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"comment",
+								"update",
+								"6822bceadfcd47d1902d1930"
+							],
+							"query": [
+								{
+									"key": "content",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteComment",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3040/v1/comment/deleted/6822bceadfcd47d1902d1930",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"comment",
+								"deleted",
+								"6822bceadfcd47d1902d1930"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3040/v1/comment/getCommentsById/6822bd6cdfcd47d1902d1935",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"comment",
+								"getCommentsById",
+								"6822bd6cdfcd47d1902d1935"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetByPostID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3040/v1/comment/getCommentByPostId/682543f0f7bafe459f911476",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"comment",
+								"getCommentByPostId",
+								"682543f0f7bafe459f911476"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Request",
+			"item": [
+				{
+					"name": "OpinionManagent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "OpinionManagent",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Un api para manejo de opiniones",
+									"type": "text"
+								},
+								{
+									"key": "course",
+									"value": "Practica",
+									"type": "text"
+								},
+								{
+									"key": "publicationDate",
+									"value": "02/23/2025",
+									"type": "text"
+								},
+								{
+									"key": "repository",
+									"value": "https://github.com/jsican-2023091/OpinionManagent",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3040/v1/post/save",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"post",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProjectCoperex",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "ProjectCoperex",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Es la api para una emprese llamada Coperex",
+									"type": "text"
+								},
+								{
+									"key": "course",
+									"value": "Taller",
+									"type": "text"
+								},
+								{
+									"key": "publicationDate",
+									"value": "02/24/2024",
+									"type": "text"
+								},
+								{
+									"key": "repository",
+									"value": "https://github.com/jsican-2023091/ProjectCoperex",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3040/v1/post/save",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"post",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProjectFinal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Proyecto Final",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "El proyecto final del primer bimestre",
+									"type": "text"
+								},
+								{
+									"key": "course",
+									"value": "Taller",
+									"type": "text"
+								},
+								{
+									"key": "publicationDate",
+									"value": "03/03/2024",
+									"type": "text"
+								},
+								{
+									"key": "repository",
+									"value": "https://github.com/jsican-2023091/ProjectFinal",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3040/v1/post/save",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"post",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PnaderiaEnchantee",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Panaderia Enchante",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Es un proyecto grupal de mi segundo año en Kinal",
+									"type": "text"
+								},
+								{
+									"key": "course",
+									"value": "Taller",
+									"type": "text"
+								},
+								{
+									"key": "publicationDate",
+									"value": "06/13/2024",
+									"type": "text"
+								},
+								{
+									"key": "repository",
+									"value": "https://github.com/drodas-2021170/PanaderiaEnchantee",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3040/v1/post/save",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"post",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Libro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Libro",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Un sistema de manejo de libros",
+									"type": "text"
+								},
+								{
+									"key": "course",
+									"value": "Taller",
+									"type": "text"
+								},
+								{
+									"key": "publicationDate",
+									"value": "06/11/2023",
+									"type": "text"
+								},
+								{
+									"key": "repository",
+									"value": "https://cetkinal-my.sharepoint.com/:f:/g/personal/jsican-2023091_kinal_edu_gt/EooYuF3vFy1BiZmiYs74EMMBwjKWjDAAMVlPlY0sR9H49g?e=18egrt",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3040/v1/post/save",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"post",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vehiculo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Vehiculo",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Un sistema de manejo de vehiculos",
+									"type": "text"
+								},
+								{
+									"key": "course",
+									"value": "Tecnología",
+									"type": "text"
+								},
+								{
+									"key": "publicationDate",
+									"value": "06/11/2024",
+									"type": "text"
+								},
+								{
+									"key": "repository",
+									"value": "https://cetkinal-my.sharepoint.com/:f:/g/personal/jsican-2023091_kinal_edu_gt/EhBInZmuTIxOgTqVDTTKgg8Br-_88FOeMcJZKkI-ld6ovQ?e=8YIhDL",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3040/v1/post/save",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"post",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EnumMascota",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Enum Mascota",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Son unos ejercicios de Java",
+									"type": "text"
+								},
+								{
+									"key": "course",
+									"value": "Taller",
+									"type": "text"
+								},
+								{
+									"key": "publicationDate",
+									"value": "12/08/2024",
+									"type": "text"
+								},
+								{
+									"key": "repository",
+									"value": "https://cetkinal-my.sharepoint.com/:u:/g/personal/jsican-2023091_kinal_edu_gt/Ede2In2MOVxMozzyDaPFalYBD2XTDClzrikS3BAIC_I9rw?e=CL8X77",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3040/v1/post/save",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"post",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CRUD_veterinaria",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Veterinaria",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Es el CRUD de una veterinaria",
+									"type": "text"
+								},
+								{
+									"key": "course",
+									"value": "Taller",
+									"type": "text"
+								},
+								{
+									"key": "publicationDate",
+									"value": "07/25/2023",
+									"type": "text"
+								},
+								{
+									"key": "repository",
+									"value": "https://cetkinal-my.sharepoint.com/:f:/g/personal/jsican-2023091_kinal_edu_gt/EiV1-tdhHQFIgyn9lw_B0j4BeH-k07fZcwadcDUu5uvIRQ?e=rr2Vjs",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3040/v1/post/save",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"post",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Prestamo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Prestamo de libros",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Es la base de datos de un sistema de presatmos de libros",
+									"type": "text"
+								},
+								{
+									"key": "course",
+									"value": "Taller",
+									"type": "text"
+								},
+								{
+									"key": "publicationDate",
+									"value": "08/23/2023",
+									"type": "text"
+								},
+								{
+									"key": "repository",
+									"value": "https://cetkinal-my.sharepoint.com/:u:/g/personal/jsican-2023091_kinal_edu_gt/Ef--z4tL5oNGmEYC4qKC-r8BroXmMyl8Z-eeIMepjYp7Tw?e=apFRMO",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3040/v1/post/save",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"post",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BD",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Bases de datos",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Es un proyecto de varias bases de datos",
+									"type": "text"
+								},
+								{
+									"key": "course",
+									"value": "Taller",
+									"type": "text"
+								},
+								{
+									"key": "publicationDate",
+									"value": "08/30/2023",
+									"type": "text"
+								},
+								{
+									"key": "repository",
+									"value": "https://cetkinal-my.sharepoint.com/:f:/g/personal/jsican-2023091_kinal_edu_gt/EohvWHJhMilOhL67wQP_8hIBq5pj9udcBbHpanHFMrvVWw?e=4TfJSW",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3040/v1/post/save",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"post",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EvaluacionFun",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Evaluacion de funciones",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Es una base de datos para evaluaciones de funciones",
+									"type": "text"
+								},
+								{
+									"key": "course",
+									"value": "Taller",
+									"type": "text"
+								},
+								{
+									"key": "publicationDate",
+									"value": "02/02/2024",
+									"type": "text"
+								},
+								{
+									"key": "repository",
+									"value": "https://cetkinal-my.sharepoint.com/:u:/g/personal/jsican-2023091_kinal_edu_gt/EengyLt3mf9HlfXKLEdKVPcBFgpOoxfaoLutMja9g0ZTjQ?e=h0e1Ur",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3040/v1/post/save",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"post",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Primer Proyecto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Primer programa",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Es mi primer programa con Java",
+									"type": "text"
+								},
+								{
+									"key": "course",
+									"value": "Taller",
+									"type": "text"
+								},
+								{
+									"key": "publicationDate",
+									"value": "02/27/2024",
+									"type": "text"
+								},
+								{
+									"key": "repository",
+									"value": "https://cetkinal-my.sharepoint.com/:f:/g/personal/jsican-2023091_kinal_edu_gt/EiTXpyCxX3JBrE7Yv2Pnl5IBLdGkxhY0jcSjLRO6vJ_JJQ?e=xelt67",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3040/v1/post/save",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"post",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Prestamo Copy 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Base de datos",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Es la base de datos de un sistema de de multiniacional de Kinal",
+									"type": "text"
+								},
+								{
+									"key": "course",
+									"value": "Taller",
+									"type": "text"
+								},
+								{
+									"key": "publicationDate",
+									"value": "08/02/2024",
+									"type": "text"
+								},
+								{
+									"key": "repository",
+									"value": "https://cetkinal-my.sharepoint.com/:u:/g/personal/jsican-2023091_kinal_edu_gt/EXov1jdDurxAp3alrXkmKoYBzkecW5UVR6eBfy8hAviInw?e=q92fjt",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3040/v1/post/save",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"post",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DBProyecto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Prestamo de libros",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Es la base de datos del proyecto final",
+									"type": "text"
+								},
+								{
+									"key": "course",
+									"value": "Taller",
+									"type": "text"
+								},
+								{
+									"key": "publicationDate",
+									"value": "02/19/2024",
+									"type": "text"
+								},
+								{
+									"key": "repository",
+									"value": "https://cetkinal-my.sharepoint.com/:u:/g/personal/jsican-2023091_kinal_edu_gt/EScZ4vqqzzFJuZFNMH26IYIBA9g_q-kFgoFR0P0490SeUw?e=DjquWm",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3040/v1/post/save",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"post",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Calcu",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Calculadora grafica",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Es una calculadora grafica de JavaFx",
+									"type": "text"
+								},
+								{
+									"key": "course",
+									"value": "Taller",
+									"type": "text"
+								},
+								{
+									"key": "publicationDate",
+									"value": "04/24/2024",
+									"type": "text"
+								},
+								{
+									"key": "repository",
+									"value": "https://cetkinal-my.sharepoint.com/:f:/g/personal/jsican-2023091_kinal_edu_gt/EmjCdmkTcW5EvvPVffkQju4B6f_c9F7a4N36AVF5nuBMvQ?e=N1EEZF",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3040/v1/post/save",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"post",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "KinalS",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Kinal Store",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Es un proyecto de Javafx de un supermercado",
+									"type": "text"
+								},
+								{
+									"key": "course",
+									"value": "Taller",
+									"type": "text"
+								},
+								{
+									"key": "publicationDate",
+									"value": "05/17/2023",
+									"type": "text"
+								},
+								{
+									"key": "repository",
+									"value": "https://cetkinal-my.sharepoint.com/:f:/g/personal/jsican-2023091_kinal_edu_gt/EsmBhh31vhBIicLFMuiSVyABBP4ASeyUi0juziDIIjxT5g?e=jOMpKy",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3040/v1/post/save",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"post",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agenda",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Agenda Web",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Es un proyecto de una agenda web",
+									"type": "text"
+								},
+								{
+									"key": "course",
+									"value": "Practica",
+									"type": "text"
+								},
+								{
+									"key": "publicationDate",
+									"value": "02/13/2025",
+									"type": "text"
+								},
+								{
+									"key": "repository",
+									"value": "https://cetkinal-my.sharepoint.com/:f:/g/personal/jsican-2023091_kinal_edu_gt/EtPx9Z7r18VPqK6kLOcwzMoBE-BOUa5EVEb5_CfVCFtAXQ?e=5VXjcs",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3040/v1/post/save",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"post",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Paginas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Paginas web",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Es un pequeño proyecto de varias paginas web",
+									"type": "text"
+								},
+								{
+									"key": "course",
+									"value": "Practica",
+									"type": "text"
+								},
+								{
+									"key": "publicationDate",
+									"value": "02/12/2025",
+									"type": "text"
+								},
+								{
+									"key": "repository",
+									"value": "https://cetkinal-my.sharepoint.com/:f:/g/personal/jsican-2023091_kinal_edu_gt/ErEuxrDn9uRBsVTz9XpBoVMBNfxiV_vHYGHHXYR_uXm7xw?e=cWrOHQ",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3040/v1/post/save",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"post",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Academi",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Academic Managaer",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Es un proyecto de manejo academico",
+									"type": "text"
+								},
+								{
+									"key": "course",
+									"value": "Taller",
+									"type": "text"
+								},
+								{
+									"key": "publicationDate",
+									"value": "02/09/2025",
+									"type": "text"
+								},
+								{
+									"key": "repository",
+									"value": "https://cetkinal-my.sharepoint.com/:u:/g/personal/jsican-2023091_kinal_edu_gt/EVhSH69jMYJNpTx6x7_bWNEBeuTeTjfWDKKfhh155PMUCw?e=wcgSQk",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3040/v1/post/save",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"post",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProjectFinal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Proyecto Final",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Es un proyecto final del primer bimestre",
+									"type": "text"
+								},
+								{
+									"key": "course",
+									"value": "Taller",
+									"type": "text"
+								},
+								{
+									"key": "publicationDate",
+									"value": "03/08/2025",
+									"type": "text"
+								},
+								{
+									"key": "repository",
+									"value": "https://cetkinal-my.sharepoint.com/:f:/g/personal/jsican-2023091_kinal_edu_gt/EoftZan8TjBIgTYDI1_xioEBk48f2HOXTeqab0swQ7NgcA?e=2d8osO",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3040/v1/post/save",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"post",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AdiptionSystem",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Sistema de adopcion",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Es un proyecto de un sistema de adopcion ",
+									"type": "text"
+								},
+								{
+									"key": "course",
+									"value": "Taller",
+									"type": "text"
+								},
+								{
+									"key": "publicationDate",
+									"value": "03/08/2025",
+									"type": "text"
+								},
+								{
+									"key": "repository",
+									"value": "https://cetkinal-my.sharepoint.com/:f:/g/personal/jsican-2023091_kinal_edu_gt/EhL-6zqt6UFJqx46Bk2KCg4BHmgIxHX_K0t0cOVZDm8e6A?e=5CZn35",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3040/v1/post/save",
+							"host": [
+								"localhost"
+							],
+							"port": "3040",
+							"path": [
+								"v1",
+								"post",
+								"save"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
