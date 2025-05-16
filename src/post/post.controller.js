@@ -125,3 +125,58 @@ export const deletePost = async (req, res) => {
     }
 }
 
+
+export const getPostById = async (req, res) => {
+  try {
+    const postId = req.params.id
+    const post = await Post.findById(postId)
+    if (!post) {
+      return res.status(404).send({
+        success: false,
+        message: 'Post not found'
+      })
+    }
+    return res.send({
+      success: true,
+      message: 'Post retrieved successfully',
+      post
+    })
+  } catch (err) {
+    console.error(err)
+    return res.status(500).send({
+      success: false,
+      message: 'Error retrieving post by ID',
+      err
+    })
+  }
+}
+
+
+export const getPostsByCourse = async (req, res) => {
+  try {
+    const courseQuery = req.params.course
+    
+    const posts = await Post.find({ course: courseQuery })
+
+    if (posts.length === 0) {
+      return res.status(404).send({
+        success: false,
+        message: `No posts found for course: ${courseQuery}`
+      })
+    }
+
+    return res.send({
+      success: true,
+      message: `Posts retrieved successfully for course: ${courseQuery}`,
+      total: posts.length,
+      posts
+    })
+  } catch (err) {
+    console.error(err)
+    return res.status(500).send({
+      success: false,
+      message: 'Error retrieving posts by course',
+      err
+    })
+  }
+}
