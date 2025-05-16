@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { postSave, getAll, publicationUpdate, deletePost } from "./post.controller.js"
+import { postSave, getAll, publicationUpdate, deletePost, getPostById, getPostsByCourse } from "./post.controller.js"
 import { publiValidation } from "../../helpers/validators.js"
 
 const api = Router() 
@@ -12,4 +12,7 @@ api.put('/update/:id', publicationUpdate)
 
 api.delete('/deleted/:id', deletePost)
 
+api.get('/getPostById/:id', getPostById )
+
+api.get('/getCourse/:course', getPostsByCourse)
 export default api
