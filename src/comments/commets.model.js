@@ -2,6 +2,11 @@ import { Schema, model } from "mongoose"
 
 const commentSchema = Schema(
     {
+        name:{
+            type: String,
+            maxLength: [12, `Can't be overcome 12 characters`],
+            required: [true, `Name is required`]
+        },
         content:{
             type: String,
             maxLength: [100, `Can't be overcome 100 characters`],
